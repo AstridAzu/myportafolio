@@ -1,7 +1,6 @@
 import styles from './App.module.css';
 import {
   FloatingDots,
-  GeometricCircles,
   Header,
   Hero,
   About,
