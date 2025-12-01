@@ -9,3 +9,4 @@ export { default as Footer } from './Footer/Footer';
 export { default as FloatingDots } from './FloatingDots/FloatingDots';
 export { default as ShootingStars } from './ShootingStars/ShootingStars';
 export { default as GeometricCircles } from './GeometricCircles/GeometricCircles';
+export { FollowCursor } from './FollowCursor/FollowCursor';

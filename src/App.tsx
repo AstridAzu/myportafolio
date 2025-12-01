@@ -1,6 +1,7 @@
 import styles from './App.module.css';
 import {
   FloatingDots,
+  FollowCursor,
   Header,
   Hero,
   About,
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <div className={styles.app}>
       <FloatingDots />
+      <FollowCursor />
       {/* <GeometricCircles /> */}
       <Header />
       <Hero />

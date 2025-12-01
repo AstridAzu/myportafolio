@@ -1,0 +1,42 @@
+.followCursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.followCursor.visible {
+  opacity: 0.7;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.6))
+          drop-shadow(0 0 25px rgba(255, 20, 147, 0.5))
+          drop-shadow(0 0 35px rgba(0, 191, 255, 0.4))
+          drop-shadow(0 4px 12px rgba(255, 105, 180, 0.5));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
+}
+
+/* En tema oscuro, añadir más intensidad a los colores */
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.8))
+            drop-shadow(0 0 30px rgba(255, 20, 147, 0.7))
+            drop-shadow(0 0 40px rgba(0, 191, 255, 0.6))
+            drop-shadow(0 4px 12px rgba(255, 105, 180, 0.7));
+  }
+}
