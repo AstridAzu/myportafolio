@@ -1,0 +1,81 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 120px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+[data-theme='dark'] .container {
+  opacity: 0.9;
+}
+
+.dot {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 6em;
+  height: 6em;
+  color: transparent;
+  mix-blend-mode: screen;
+  margin-left: -3em;
+  margin-top: -3em;
+}
+
+.dot::before {
+  content: '.';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(18) translateX(-30px);
+  }
+  to {
+    transform: rotate(360deg) scale(25) translateX(30px);
+  }
+}
+
+/* Reducir intensidad en móviles para mejor rendimiento */
+@media (max-width: 768px) {
+  .container {
+    font-size: 60px;
+    opacity: 0.4;
+  }
+
+  .dot {
+    width: 5em;
+    height: 5em;
+    margin-left: -2.5em;
+    margin-top: -2.5em;
+  }
+
+  [data-theme='dark'] .container {
+    opacity: 0.6;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+    to {
+      transform: rotate(360deg) scale(16) translateX(20px);
+    }
+  }
+}
+
+/* Opción para deshabilitar en dispositivos de bajo rendimiento */
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none !important;
+  }
+}

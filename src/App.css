@@ -1,0 +1,27 @@
+.App {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Estilos globales para secciones */
+section {
+  scroll-margin-top: 80px; /* Para compensar el header fixed */
+}
+
+/* Animación para scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mejoras visuales generales */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --text-color: #333;
+  --background-light: #f8f9fa;
+}

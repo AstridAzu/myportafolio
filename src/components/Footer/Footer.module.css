@@ -1,0 +1,23 @@
+.footer {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerContent p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.footerSubtitle {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+}

@@ -1,0 +1,9 @@
+.app {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Estilos globales para secciones */
+section {
+  scroll-margin-top: 80px; /* Para compensar el header fixed */
+}
