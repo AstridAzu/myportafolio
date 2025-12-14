@@ -49,7 +49,7 @@ const Projects = () => {
   return (
     <section className={styles.projects} id="projects">
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Proyectos</h2>
+        <h2 className={styles.sectionTitle}>Proyectos Personales</h2>
         <div className={styles.projectsGrid}>
           {projects.map((project, index) => (
             <article key={index} className={styles.projectCard}>

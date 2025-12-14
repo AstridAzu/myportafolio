@@ -64,9 +64,23 @@ const About = () => {
                 En búsqueda de una <span className={styles.highlight}>oportunidad profesional</span> que permita aplicar 
                 los conocimientos adquiridos hasta el momento.
               </p>
+              
+              <div className={styles.experienceBox}>
+                <div className={styles.experienceHeader}>
+                  <span className={styles.experienceIcon}>💼</span>
+                  <h4 className={styles.experienceTitle}>Experiencia Laboral</h4>
+                </div>
+                <div className={styles.experienceItem}>
+                  <h5 className={styles.experienceRole}>Desarrollador en proyecto de IA con Python</h5>
+                  <div className={styles.experienceDetails}>
+                    <span className={styles.experienceCompany}>ThePower (Madrid)</span>
+                    <span className={styles.experiencePeriod}>2025</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
+                <h2>Habilidades Blandas</h2>
           <div className={styles.highlightsGrid}>
             {highlights.map((item, index) => (
               <div key={index} className={styles.highlightCard}>

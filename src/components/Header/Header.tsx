@@ -13,7 +13,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 20);
       
       // Detectar sección activa
-      const sections = ['hero', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'education', 'skills', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -40,6 +40,7 @@ const Header = () => {
   const navItems = [
     { id: 'hero', label: 'Inicio', icon: '🏠' },
     { id: 'about', label: 'Sobre Mí', icon: '👤' },
+    { id: 'education', label: 'Formación', icon: '🎓' },
     { id: 'skills', label: 'Habilidades', icon: '⚡' },
     { id: 'projects', label: 'Proyectos', icon: '💼' },
     { id: 'contact', label: 'Contacto', icon: '📧' },

@@ -353,6 +353,68 @@
   margin: 0;
 }
 
+.experienceBox {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(138, 43, 226, 0.05), rgba(0, 191, 255, 0.05));
+  border-radius: 15px;
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  transition: all 0.3s ease;
+}
+
+.experienceBox:hover {
+  border-color: rgba(138, 43, 226, 0.4);
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.15);
+  transform: translateY(-2px);
+}
+
+.experienceHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.experienceIcon {
+  font-size: 1.5rem;
+}
+
+.experienceTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.experienceItem {
+  padding-left: 2.25rem;
+}
+
+.experienceRole {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.experienceDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.experienceCompany {
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.experiencePeriod {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
 @media (max-width: 968px) {
   .mainCard {
     grid-template-columns: 1fr;
