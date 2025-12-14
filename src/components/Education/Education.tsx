@@ -11,6 +11,7 @@ interface EducationItem {
 
 const Education = () => {
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
+  const [expandedSkills, setExpandedSkills] = useState<number[]>([]);
 
   const toggleItem = (index: number) => {
     setExpandedItems(prev => 
@@ -18,6 +19,17 @@ const Education = () => {
         ? prev.filter(i => i !== index)
         : [...prev, index]
     );
+  };
+
+  const toggleSkill = (index: number) => {
+    console.log('toggleSkill called with index:', index);
+    setExpandedSkills(prev => {
+      const newState = prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index];
+      console.log('New expandedSkills:', newState);
+      return newState;
+    });
   };
 
   const education: EducationItem[] = [
@@ -70,14 +82,15 @@ const Education = () => {
                   </div>
                   <h3 className={styles.degree}>{item.degree}</h3>
                 </div>
-                <button 
+                <div 
                   className={`${styles.chevron} ${expandedItems.includes(index) ? styles.chevronExpanded : ''}`}
+                  role="button"
                   aria-label={expandedItems.includes(index) ? 'Colapsar' : 'Expandir'}
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M6 9l6 6 6-6"/>
                   </svg>
-                </button>
+                </div>
               </div>
               
               {expandedItems.includes(index) && (
@@ -101,15 +114,28 @@ const Education = () => {
           <div className={styles.skillsGrid}>
             {technicalSkills.map((category, index) => (
               <div key={index} className={styles.skillCategory}>
-                <div className={styles.categoryHeader}>
-                  <span className={styles.categoryIcon}>{category.icon}</span>
-                  <h4 className={styles.categoryName}>{category.category}</h4>
+                <div className={styles.categoryHeader} onClick={() => toggleSkill(index)}>
+                  <div className={styles.categoryLeft}>
+                    <span className={styles.categoryIcon}>{category.icon}</span>
+                    <h4 className={styles.categoryName}>{category.category}</h4>
+                  </div>
+                  <div 
+                    className={`${styles.chevron} ${expandedSkills.includes(index) ? styles.chevronExpanded : ''}`}
+                    role="button"
+                    aria-label={expandedSkills.includes(index) ? 'Colapsar' : 'Expandir'}
+                  >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </div>
                 </div>
-                <div className={styles.skillTags}>
-                  {category.skills.map((skill, i) => (
-                    <span key={i} className={styles.skillTag}>{skill}</span>
-                  ))}
-                </div>
+                {expandedSkills.includes(index) && (
+                  <div className={styles.skillTags}>
+                    {category.skills.map((skill, i) => (
+                      <span key={i} className={styles.skillTag}>{skill}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
